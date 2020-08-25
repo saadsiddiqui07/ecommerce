@@ -1,0 +1,56 @@
+.checkout {
+  display: flex;
+  padding: 20px;
+  height: max-content;
+}
+
+.checkout__left {
+  display: flex;
+  flex-direction: column;
+  flex: 0.75rem;
+  margin-right: 5px;
+  flex: 0.7;
+}
+
+.checkout__right {
+  flex: 0.3;
+}
+
+.checkout__button {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #cd9042;
+  border: 1px solid black;
+}
+
+.checkout__buttonShopping {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #131921;
+  border: 1px solid black;
+  color: white;
+}
+.checkout__button:hover {
+  transition: ease-in-out;
+  transform: scale(1.09);
+}
+
+.checkout__link {
+  color: white;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.checkout__ad {
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
