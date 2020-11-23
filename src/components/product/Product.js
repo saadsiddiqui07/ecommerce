@@ -1,3 +1,5 @@
+/* eslint-disable no-empty-pattern */
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "../../context/StateProvider";
@@ -14,14 +16,16 @@ function Product({ id, image, price, title, rating }) {
         title,
         price,
         rating,
-        image,
-      },
+        image
+      }
     });
   };
   return (
     <div className="product">
       <div className="product__info">
-        <p>{title}</p>
+        <p>
+          <strong>{title}</strong>
+        </p>
         <p className="product__price">
           <small>$ </small>
           <strong>{price}</strong>
@@ -29,13 +33,13 @@ function Product({ id, image, price, title, rating }) {
         <div className="product__rating">
           {Array(rating)
             .fill()
-            .map((_) => (
+            .map(_ => (
               <p>⭐</p>
             ))}
         </div>
       </div>
       <img src={image} alt="" />
-      <button onClick={addToCart}>Add to cart</button>
+      <button onClick={addToCart}>Add to cart 🛒</button>
     </div>
   );
 }

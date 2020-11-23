@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import "./Subtotal.css";
-import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../../context/StateProvider";
+import CurrencyFormat from "react-currency-format";
 import { getCartTotal } from "../../context/reducer";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function Subtotal() {
   const [{ cart, user }, dispatch] = useStateValue();
+  const history = useHistory();
 
   return (
     <div className="subtotal">
@@ -29,7 +31,10 @@ function Subtotal() {
         value={getCartTotal(cart)}
       />
       <Link to={!user && "/login"}>
-        <button className="subtotal__link">
+        <button
+          onClick={() => history.replace("/payment")}
+          className="subtotal__link"
+        >
           {" "}
           {!user ? "Please Sign In first." : "Proceed to checkout"}
         </button>

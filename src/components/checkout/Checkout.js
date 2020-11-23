@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Subtotal from "./Subtotal";
 
 function Checkout() {
-  const [{ cart }] = useStateValue();
+  const [{ user, cart }] = useStateValue();
 
   return (
     <div className="checkout">
@@ -30,6 +30,7 @@ function Checkout() {
           </div>
         ) : (
           <div>
+            <h3>Hello {user?.email}</h3>
             <h2 className="checkout__title">Your products</h2>
             {/* List of the products to buy */}
             {cart?.map((item) => (

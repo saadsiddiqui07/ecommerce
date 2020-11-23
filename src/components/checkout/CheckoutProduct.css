@@ -4,10 +4,21 @@
   background-color: white;
   margin: 10px;
   padding: 5px;
+  cursor: pointer;
+}
+
+.checkoutProduct__image:hover {
+  transform: scale(1.05);
 }
 
 .checkoutProduct__info {
-  padding-left: 20px;
+  margin-left: 15px;
+}
+
+@media (max-width: 800px) {
+  .checkoutProduct__info {
+    display: flexbox;
+  }
 }
 
 .checkoutProduct__title {
@@ -18,8 +29,9 @@
 
 .checkoutProduct__image {
   width: 180px;
-  height: 180px;
+  height: 150px;
   object-fit: contain;
+  transition: transform 50ms ease-out;
 }
 
 .checkoutProduct__rating {
@@ -31,6 +43,6 @@
   padding: 1px;
   border: 1px solid black;
   color: black;
-  margin-top: 10px;
+  margin-top: 30px;
   cursor: pointer;
 }

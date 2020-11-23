@@ -1,0 +1,30 @@
+[debug] [2020-10-14T17:58:26.486Z] ----------------------------------------------------------------------
+[debug] [2020-10-14T17:58:26.487Z] Command:       /home/ehtesham/.nvm/versions/node/v12.16.2/bin/node /home/ehtesham/.nvm/versions/node/v12.16.2/bin/firebase deploy
+[debug] [2020-10-14T17:58:26.488Z] CLI Version:   8.12.1
+[debug] [2020-10-14T17:58:26.488Z] Platform:      linux
+[debug] [2020-10-14T17:58:26.488Z] Node Version:  v12.16.2
+[debug] [2020-10-14T17:58:26.488Z] Time:          Wed Oct 14 2020 23:28:26 GMT+0530 (India Standard Time)
+[debug] [2020-10-14T17:58:26.488Z] ----------------------------------------------------------------------
+[debug] [2020-10-14T17:58:26.489Z] 
+[debug] [2020-10-14T17:58:26.495Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-10-14T17:58:26.495Z] > authorizing via signed-in user
+[debug] [2020-10-14T17:58:26.495Z] [iam] checking project clone-ce7f3 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-10-14T17:58:26.498Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/clone-ce7f3:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-10-14T17:58:28.149Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 14 Oct 2020 17:58:28 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1297","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-14T17:58:28.151Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/clone-ce7f3/serviceAccounts/clone-ce7f3@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-10-14T17:58:30.005Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 14 Oct 2020 17:58:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-14T17:58:30.009Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/clone-ce7f3  
+ 
+[debug] [2020-10-14T17:58:30.388Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 14 Oct 2020 17:58:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-14T17:58:30.535Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:117:11)
+    at Object.join (path.js:1039:7)
+    at Object.checkFunctionsSDKVersion [as fn] (/home/ehtesham/.nvm/versions/node/v12.16.2/lib/node_modules/firebase-tools/lib/checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (/home/ehtesham/.nvm/versions/node/v12.16.2/lib/node_modules/firebase-tools/lib/command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/ehtesham/.nvm/versions/node/v12.16.2/lib/node_modules/firebase-tools/lib/command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.

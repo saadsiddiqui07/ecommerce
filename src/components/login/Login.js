@@ -5,33 +5,30 @@ import { auth } from "../../Firebase/firebase";
 
 function Login() {
   const history = useHistory();
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const login = (e) => {
-    e.preventDefault();
-    // Login logic of the user
+  const login = e => {
+    e.preventDefault(); // Login logic of the user
 
     auth
       .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
+      .then(auth => {
         history.push("/");
       })
-      .catch((e) => alert(e.message));
+      .catch(e => alert(e.message));
   };
 
-  const register = (e) => {
+  const register = e => {
     e.preventDefault();
     // Registering the new user....
 
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        history.push("/");
-      })
-      .catch((e) => alert(e.message));
+    auth.createUserWithEmailAndPassword(email, password).then(auth => {
+      history.push("/");
+    });
   };
+
+  // console.log("Address is --->", userAddress);
 
   return (
     <div className="login">
@@ -46,24 +43,18 @@ function Login() {
       <div className="login__container">
         <h1>Sign In</h1>
         <form>
-          <h5>Your name</h5>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
           <h5>Email</h5>
           <input
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
           />
           <h5>Password</h5>
           <input
             type="password"
             placeholder="At least 6 characters"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={e => setPassword(e.target.value)}
           />
           <button className="login__signInButton" type="submit" onClick={login}>
             Sign In

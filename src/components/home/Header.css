@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  mask-image: linear-gradient(to bottom rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .header__logo {
@@ -18,9 +19,13 @@
   height: 45px;
 }
 
+.header__logo:hover {
+  border: 0.5px solid white;
+}
+
 @media (max-width: 880px) {
   .header__logo {
-    width: 85px;
+    width: 70px;
   }
 }
 
@@ -43,7 +48,7 @@
 
 .header__searchIcon {
   background-color: #cd9042;
-  padding: 5px;
+  padding: 5.5px;
 }
 
 .header__nav {
@@ -76,15 +81,9 @@
 
 .header__optionBasket {
   display: flex;
+  align-items: center;
 }
 
 .header__basketcount {
-  margin-right: 10px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  background-color: #cd9042;
-
-  color: black;
+  color: #cd9042;
 }

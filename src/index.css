@@ -8,6 +8,10 @@ body {
   background-color: rgb(236, 236, 236);
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

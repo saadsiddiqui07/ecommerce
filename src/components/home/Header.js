@@ -40,7 +40,9 @@ function Header() {
       <div className="header__nav">
         <Link to={!user && "/login"} className="header__link">
           <div onClick={logout} className="header__options">
-            <span className="headeroption_firstLine">Hello {user?.email}</span>
+            <span className="headeroption_firstLine">
+              Hello {user?.email[0]}
+            </span>
             <span className="headeroption__secondLine">
               {!user ? "Sign In" : "Sign Out"}
             </span>
@@ -63,8 +65,6 @@ function Header() {
           </div>
         </Link>
       </div>
-
-      {/* basket icon with cat items */}
     </div>
   );
 }

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from "react";
 import "./CheckoutProduct.css";
 import { useStateValue } from "../../context/StateProvider";
@@ -28,7 +30,7 @@ function CheckoutProduct({ title, price, id, image, rating }) {
               <p>⭐</p>
             ))}
         </div>
-        <button onClick={removeFromCart}>Remove from cart</button>
+        <button onClick={removeFromCart}>Remove from cart 🗑️</button>
       </div>
     </div>
   );

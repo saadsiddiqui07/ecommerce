@@ -4,6 +4,16 @@
   height: max-content;
 }
 
+@media (max-width: 880px) {
+  .checkout {
+    flex-direction: column;
+  }
+
+  .checkout__right {
+    margin-top: 20px;
+  }
+}
+
 .checkout__left {
   display: flex;
   flex-direction: column;
@@ -53,4 +63,6 @@
   width: 100%;
   object-fit: contain;
   margin-bottom: 15px;
+  height: 60px;
+  margin-right: auto;
 }
