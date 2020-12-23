@@ -3,12 +3,12 @@ import React, { useEffect } from "react";
 import { useStateValue } from "../../context/StateProvider.js";
 import CheckoutProduct from "../checkout/CheckoutProduct.js";
 import { Link, useHistory } from "react-router-dom";
-import "./Payment.css";
 import CurrencyFormat from "react-currency-format";
 import { getCartTotal } from "../../context/reducer";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import axios from "../../axios";
+import "./Payment.css";
 
 const Payment = () => {
   const [{ cart, user, address }, dispatch] = useStateValue();
@@ -27,22 +27,22 @@ const Payment = () => {
     const getClientSecretKey = async () => {
       const response = await axios({
         method: "post",
-        url: `payments/create?total=${getCartTotal(cart) * 100}`
+        url: `payments/create?total=${getCartTotal(cart) * 100}`,
       });
       setClientSecret(response.data.clientSecret);
     };
     getClientSecretKey();
   }, [cart]); // --> dependency
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
 
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
-          card: elements.getElement(CardElement)
-        }
+          card: elements.getElement(CardElement),
+        },
       })
       .then(({ paymentIntent }) => {
         setSucceeded(true);
@@ -53,7 +53,7 @@ const Payment = () => {
       });
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     e.preventDefault();
     // listen for changes in CardElement & display erros of the customers card details
     setDisabled(e.empty);
@@ -88,7 +88,7 @@ const Payment = () => {
             <h3>Your products.</h3>
           </div>
           <div className="payment__items">
-            {cart.map(item => (
+            {cart.map((item) => (
               <CheckoutProduct
                 id={item.id}
                 image={item.image}
@@ -112,7 +112,7 @@ const Payment = () => {
 
             <div className="payment__priceContainer">
               <CurrencyFormat
-                renderText={value => <h3>Order Total: {value}</h3>}
+                renderText={(value) => <h3>Order Total: {value}</h3>}
                 decimalScale={2}
                 prefix={"$"}
                 displayType={"text"}
